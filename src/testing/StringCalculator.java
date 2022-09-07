@@ -1,6 +1,9 @@
 package testing;
+import java.util.*;
 
 public class StringCalculator {
+	
+	private final String alpha="a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z";
 	
 	public int add(String input)
 	{   
@@ -24,9 +27,27 @@ public class StringCalculator {
 	{
 		int sum=0;
 		
-		for(int i=0;i<number.length;i++)
+		HashMap<String,Integer> map=new HashMap<>();
+		
+		
+		String[] temp=alpha.split(",");
+		
+		for(int i=0;i<26;i++)
 		{
-			sum=sum+Integer.parseInt(number[i]);
+			map.put(temp[i],i+1);
+			
+		}
+		
+		for(int i=0;i<number.length;i++)
+		{   
+			if(map.containsKey(number[i]))
+			{
+				sum=sum+map.get(number[i]);
+			}
+			else
+			{
+			    sum=sum+Integer.parseInt(number[i]);
+			}
 		}
 		
 		return sum;

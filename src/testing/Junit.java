@@ -34,6 +34,12 @@ public class Junit {
 	@Test
 	public void addUnknownNumbers() {
 		assertEquals(obj.add("1,1,100,1"),103);
+	}  
+	
+	@Test
+	public void allowAlphabets() {
+		assertEquals(obj.add("1,2,a,c"),7);
 	}
+
 
 }
