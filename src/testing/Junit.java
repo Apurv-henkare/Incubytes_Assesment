@@ -18,17 +18,22 @@ public class Junit {
 	@Test
 	public void emptyStringTestReturnsZero() {
 		
-		assertEquals(obj.calculate(""),0);
+		assertEquals(obj.add(""),0);
 	} 
 	
 	@Test
 	public void singleStringreturnsInteger() {
-		assertEquals(obj.calculate("100"),100);
+		assertEquals(obj.add("100"),100);
 	} 
 	
 	@Test
-	public void addTwoNumberWithDelimiter() {
-		assertEquals(obj.calculate("1,20"),21);
+	public void addTwoNumbersWithDelimiter() {
+		assertEquals(obj.add("1,20"),21);
+	} 
+	
+	@Test
+	public void addUnknownNumbers() {
+		assertEquals(obj.add("1,1,100,1"),103);
 	}
 
 }

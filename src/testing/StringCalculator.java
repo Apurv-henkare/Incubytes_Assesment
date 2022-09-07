@@ -2,7 +2,7 @@ package testing;
 
 public class StringCalculator {
 	
-	public int calculate(String input)
+	public int add(String input)
 	{   
 		String[] number=input.split(",");
 		
@@ -16,14 +16,22 @@ public class StringCalculator {
 		}
 		else
 		{
-			return getTwoSum(number);
+			return getSum(number);
 		}
 	}
 	
-	private int getTwoSum(String[] number)
+	private int getSum(String[] number)
 	{
-		return Integer.parseInt(number[0])+Integer.parseInt(number[1]);
+		int sum=0;
+		
+		for(int i=0;i<number.length;i++)
+		{
+			sum=sum+Integer.parseInt(number[i]);
+		}
+		
+		return sum;
 	}
+	
 	
 	private boolean isEmpty(String input)
 	{
