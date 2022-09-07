@@ -24,6 +24,11 @@ public class Junit {
 	@Test
 	public void singleStringreturnsInteger() {
 		assertEquals(obj.calculate("100"),100);
+	} 
+	
+	@Test
+	public void addTwoNumberWithDelimiter() {
+		assertEquals(obj.calculate("1,20"),21);
 	}
 
 }
