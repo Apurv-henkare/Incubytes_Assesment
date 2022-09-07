@@ -52,7 +52,10 @@ public class StringCalculator {
 					flag=1;
 					num.add(number[i]);
 				}
-			    sum=sum+Integer.parseInt(number[i]);
+				else if(Integer.parseInt(number[i])<=1000)
+				{
+					sum=sum+Integer.parseInt(number[i]);
+				}
 			}
 		}
 		

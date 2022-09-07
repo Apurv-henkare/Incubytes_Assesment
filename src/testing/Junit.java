@@ -50,6 +50,11 @@ public class Junit {
 	@Test
 	public void allNegativeNumber() throws Exception {
 		obj.add("-100,-120,-1000");
+	} 
+	
+	@Test
+	public void ignoreMoreThan1000() throws Exception {
+		assertEquals(obj.add("2,1,1001,1000"),1003);
 	}
 
 
