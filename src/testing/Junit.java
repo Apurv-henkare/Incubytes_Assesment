@@ -45,6 +45,11 @@ public class Junit {
 	@Test
 	public void NegativeNumber() throws Exception {
 		obj.add("1,2,100,-1");
+	} 
+	
+	@Test
+	public void allNegativeNumber() throws Exception {
+		obj.add("-100,-120,-1000");
 	}
 
 

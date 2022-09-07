@@ -28,7 +28,7 @@ public class StringCalculator {
 		int sum=0;
 		
 		HashMap<String,Integer> map=new HashMap<>();
-		
+		ArrayList<String> num=new ArrayList<>();
 
 		String[] temp=alpha.split(",");
 		
@@ -38,6 +38,7 @@ public class StringCalculator {
 			
 		}
 		
+		int flag=0;
 		for(int i=0;i<number.length;i++)
 		{   
 			if(map.containsKey(number[i]))
@@ -47,11 +48,24 @@ public class StringCalculator {
 			else
 			{   
 				if(Integer.parseInt(number[i])<0)
-				{
-					throw new Exception("No Negative Number");
+				{   
+					flag=1;
+					num.add(number[i]);
 				}
 			    sum=sum+Integer.parseInt(number[i]);
 			}
+		}
+		
+		if(flag == 1)
+		{
+			String no_negative_numbers="";
+			
+			for(int i=0;i<num.size();i++)
+			{
+				no_negative_numbers=no_negative_numbers+num.get(i)+",";
+			}
+			
+			throw new Exception("No Negative Numbers: "+no_negative_numbers);
 		}
 		
 		return sum;
