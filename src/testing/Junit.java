@@ -16,29 +16,35 @@ public class Junit {
 	}
 
 	@Test
-	public void emptyStringTestReturnsZero() {
+	public void emptyStringTestReturnsZero() throws Exception
+	{
 		
 		assertEquals(obj.add(""),0);
 	} 
 	
 	@Test
-	public void singleStringreturnsInteger() {
+	public void singleStringreturnsInteger() throws Exception {
 		assertEquals(obj.add("100"),100);
 	} 
 	
 	@Test
-	public void addTwoNumbersWithDelimiter() {
+	public void addTwoNumbersWithDelimiter() throws Exception {
 		assertEquals(obj.add("1,20"),21);
 	} 
 	
 	@Test
-	public void addUnknownNumbers() {
+	public void addUnknownNumbers() throws Exception {
 		assertEquals(obj.add("1,1,100,1"),103);
 	}  
 	
 	@Test
-	public void allowAlphabets() {
+	public void allowAlphabets() throws Exception {
 		assertEquals(obj.add("1,2,a,c"),7);
+	} 
+	
+	@Test
+	public void NegativeNumber() throws Exception {
+		obj.add("1,2,100,-1");
 	}
 
 

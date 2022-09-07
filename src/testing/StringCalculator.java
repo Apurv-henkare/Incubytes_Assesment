@@ -5,7 +5,7 @@ public class StringCalculator {
 	
 	private final String alpha="a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z";
 	
-	public int add(String input)
+	public int add(String input) throws Exception
 	{   
 		String[] number=input.split(",");
 		
@@ -23,13 +23,13 @@ public class StringCalculator {
 		}
 	}
 	
-	private int getSum(String[] number)
+	private int getSum(String[] number) throws Exception
 	{
 		int sum=0;
 		
 		HashMap<String,Integer> map=new HashMap<>();
 		
-		
+
 		String[] temp=alpha.split(",");
 		
 		for(int i=0;i<26;i++)
@@ -45,7 +45,11 @@ public class StringCalculator {
 				sum=sum+map.get(number[i]);
 			}
 			else
-			{
+			{   
+				if(Integer.parseInt(number[i])<0)
+				{
+					throw new Exception("No Negative Number");
+				}
 			    sum=sum+Integer.parseInt(number[i]);
 			}
 		}
