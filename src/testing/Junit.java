@@ -19,43 +19,47 @@ public class Junit {
 	public void emptyStringTestReturnsZero() throws Exception
 	{
 		
-		assertEquals(obj.add(""),0);
+		assertEquals(0,obj.add(""));
 	} 
 	
 	@Test
 	public void singleStringreturnsInteger() throws Exception {
-		assertEquals(obj.add("100"),100);
+		assertEquals(100,obj.add("100"));
 	} 
 	
 	@Test
 	public void addTwoNumbersWithDelimiter() throws Exception {
-		assertEquals(obj.add("1,20"),21);
+		assertEquals(21,obj.add("1,20"));
 	} 
 	
 	@Test
 	public void addUnknownNumbers() throws Exception {
-		assertEquals(obj.add("1,1,100,1"),103);
+		assertEquals(103,obj.add("1,1,100,1"));
 	}  
 	
 	@Test
 	public void allowAlphabets() throws Exception {
-		assertEquals(obj.add("1,2,a,c"),7);
+		assertEquals(14,obj.add("1,2,a,j"));
 	} 
 	
-	@Test
+	@Test(expected = Exception.class)
 	public void NegativeNumber() throws Exception {
 		obj.add("1,2,100,-1");
 	} 
 	
-	@Test
+	@Test(expected = Exception.class)
 	public void allNegativeNumber() throws Exception {
 		obj.add("-100,-120,-1000");
 	} 
 	
 	@Test
 	public void ignoreMoreThan1000() throws Exception {
-		assertEquals(obj.add("2,1,1001,1000"),1003);
-	}
+		assertEquals(1003,obj.add("2,1,1001,1000"));
+	} 
+	
+	
+	
+	
 
 
 }
